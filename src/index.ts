@@ -20,15 +20,13 @@ const dirPath = getAbsoluteDirPath(dir);
 Logging.startProcessing();
 
 try {
-  setTimeout(() => {
-    orgAndClose(dirPath, isVerbose);
+  orgAndClose(dirPath, isVerbose);
 
-    if (isListening) {
-      listenForChanges(dirPath, isVerbose);
-    } else {
-      Logging.main("Done 🎉");
-    }
-  }, 3000);
+  if (isListening) {
+    listenForChanges(dirPath, isVerbose);
+  } else {
+    Logging.main("Done 🎉");
+  }
 } catch (e: any) {
   Logging.error(e);
 }
