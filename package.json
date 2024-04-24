@@ -1,6 +1,6 @@
 {
   "name": "organizee",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "organizee is a command-line interface (CLI) tool designed to help users organize their files efficiently based on file type.",
   "main": "dist/index.mjs",
   "module": "dist/index.mjs",
