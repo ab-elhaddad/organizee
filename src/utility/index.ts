@@ -8,3 +8,4 @@ export * from "./moveFile";
 export * from "./validateDirPath";
 export * from "./getAbsoluteDirPath";
 export * from "./printFIGfont";
+export * from "./extractFlags";

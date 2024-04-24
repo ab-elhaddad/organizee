@@ -1,17 +1,14 @@
 #!/usr/bin/env node
 
-import { Logging, getAbsoluteDirPath } from "./utility";
+import { Logging, getAbsoluteDirPath, extractFlags } from "./utility";
 import { listenForChanges, orgAndClose } from "./main";
 
 await Logging.printFIGfont();
 
-const isVerbose = process.argv.includes("-v");
+const { dirPathIndex, isVerbose, isListening } = extractFlags(process.argv);
 
-const dirPathIndex = process.argv.indexOf("-p") + 1;
 const dir = process.argv[dirPathIndex];
 const dirPath = getAbsoluteDirPath(dir);
-
-const isListening = process.argv.includes("-l");
 
 Logging.startProcessing();
 
