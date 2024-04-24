@@ -5,7 +5,14 @@ import { listenForChanges, orgAndClose } from "./main";
 
 await Logging.printFIGfont();
 
-const { dirPathIndex, isVerbose, isListening } = extractFlags(process.argv);
+const { dirPathIndex, isVerbose, isListening, isHelp } = extractFlags(
+  process.argv
+);
+
+if (isHelp) {
+  Logging.printHelp();
+  process.exit(0);
+}
 
 const dir = process.argv[dirPathIndex];
 const dirPath = getAbsoluteDirPath(dir);

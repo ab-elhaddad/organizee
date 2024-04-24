@@ -54,4 +54,18 @@ export class Logging {
   static main = (message: string) => {
     console.log(chalk.blue(message));
   };
+
+  static printHelp = () => {
+    console.log(
+      chalk.green(`
+  Usage: organizee [options] -p <directory>
+
+  Options:
+    -p, --path     Specify the directory path
+    -v, --verbose  Enable verbose output
+    -l, --listen   Keep listening for changes in the directory
+    -h, --help     Display this help message
+  `)
+    );
+  };
 }
