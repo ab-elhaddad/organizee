@@ -2,7 +2,7 @@
   "name": "organizee",
   "version": "1.0.0",
   "description": "organizee is a command-line interface (CLI) tool designed to help users organize their files efficiently based on file type.",
-  "main": "dist/index.js",
+  "main": "dist/index.mjs",
   "module": "dist/index.mjs",
   "tsup": {
     "entry": [
@@ -24,7 +24,7 @@
     "prepare": "husky",
     "spell-check": "cspell \"**.ts\""
   },
-  "bin": "dist/index.js",
+  "bin": "dist/index.mjs",
   "author": "Abdelrrahman Elhaddad",
   "license": "MIT",
   "keywords": [
