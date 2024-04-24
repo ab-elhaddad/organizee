@@ -1,0 +1,4 @@
+# .husky/pre-commit
+
+npm test
+npm run spell-check

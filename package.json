@@ -1,0 +1,50 @@
+{
+  "name": "organizee",
+  "version": "1.0.0",
+  "description": "An npm package to organzie your files depending on their file fileTypes",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ab-elhaddad/organizee"
+  },
+  "scripts": {
+    "build": "tsup",
+    "start": "node dist/index.mjs",
+    "watch": "jest --watchAll --verbose",
+    "test": "jest",
+    "prepare": "husky",
+    "spell-check": "cspell \"**.ts\""
+  },
+  "bin": "dist/index.js",
+  "author": "Abdelrrahman Elhaddad",
+  "license": "MIT",
+  "keywords": [
+    "organize",
+    "files",
+    "organizee"
+  ],
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "figlet": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.5.8",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "cspell": "^8.7.0",
+    "husky": "^9.0.11",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
+}

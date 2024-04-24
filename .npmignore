@@ -1,0 +1,14 @@
+node_modules
+src
+
+.gitignore
+
+.prettierrc
+
+jest.config.js
+
+cspell.json
+project-words.txt
+
+tsconfig.json
+tsup.config.ts
