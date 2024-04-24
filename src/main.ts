@@ -18,11 +18,11 @@ export const orgAndClose = (dirPath: string, isVerbose: boolean) => {
 };
 
 export const listenForChanges = (dirPath: string, isVerbose: boolean) => {
-  const modulePath = join("dist", "backgroundProcess.mjs");
+  const modulePath = join("dist", "listenProcess.mjs");
 
   const child = fork(modulePath, [dirPath, isVerbose ? "-v" : ""]);
   child.unref();
 
-  Logging.main("Running in background 🚀");
+  Logging.main("Listening for changes 🔍");
   // process.exit(0);
 };

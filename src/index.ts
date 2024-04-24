@@ -11,7 +11,7 @@ const dirPathIndex = process.argv.indexOf("-p") + 1;
 const dir = process.argv[dirPathIndex];
 const dirPath = getAbsoluteDirPath(dir);
 
-const isInBackground = process.argv.includes("-b");
+const isListening = process.argv.includes("-l");
 
 Logging.startProcessing();
 
@@ -19,7 +19,7 @@ try {
   setTimeout(() => {
     orgAndClose(dirPath, isVerbose);
 
-    if (isInBackground) {
+    if (isListening) {
       listenForChanges(dirPath, isVerbose);
     } else {
       Logging.main("Done 🎉");

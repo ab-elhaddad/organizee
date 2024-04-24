@@ -10,7 +10,7 @@ import {
 const dirPath = process.argv[2];
 const isVerbose = process.argv.includes("-v");
 
-// Listens only if the script runs in background
+// Listen for changes in the directory
 watch(dirPath, (event, file) => {
   if (!file) return;
   if (event !== "rename") return;
