@@ -1,5 +1,13 @@
 node_modules
 src
+__tests__
+.husky
+
+LICENSE
+README.md
+
+package.json
+package-lock.json
 
 .gitignore
 
