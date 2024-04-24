@@ -1,7 +1,7 @@
 {
   "name": "organizee",
   "version": "1.0.0",
-  "description": "An npm package to organzie your files depending on their file fileTypes",
+  "description": "organizee is a command-line interface (CLI) tool designed to help users organize their files efficiently based on file type.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "tsup": {
