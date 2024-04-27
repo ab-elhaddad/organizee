@@ -18,7 +18,7 @@ export const orgAndClose = (dirPath: string, isVerbose: boolean) => {
 };
 
 export const listenForChanges = (dirPath: string, isVerbose: boolean) => {
-  const modulePath = join("dist", "listenProcess.mjs");
+  const modulePath = join(__dirname, "listenProcess.mjs");
 
   const child = fork(modulePath, [dirPath, isVerbose ? "-v" : ""]);
   child.unref();
