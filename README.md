@@ -32,13 +32,13 @@ This will install the tool globally on your system, allowing you to run it from 
 To organize your files, run the following command in your terminal:
 
 ```bash
-organizee -p <path>
+npx organizee -p <path>
 ```
 
 Replace `<path>` with the directory path you want to organize. For example:
 
 ```bash
-organizee -p ~/Downloads
+npx organizee -p ~/Downloads
 ```
 
 This will organize all the files in the `Downloads` directory.
@@ -49,49 +49,42 @@ This will organize all the files in the `Downloads` directory.
 
 - `-p, --path <path>`: [**Required**] Specifies the directory path to organize. (_takes relative or absolute path_)
 
-  - You can use `downloads` to organize the default downloads directory. [_Only for Windows OS_] <br>
-    eg: `organizee -p downloads`
-  - You can use `desktop` to organize the default desktop directory. [_Only for Windows OS_] <br>
-    eg: `organizee -p desktop`
-
 - `-v, --verbose`: Enables verbose mode, which displays detailed information during the organization process.
 
 - `-l, --listen`: Keeps the tool running and listens for new files to organize in real-time.
 
-- `-i, --ignore <types>`: [not implemented yet] Ignores specific file types during organization. Multiple types can be specified separated by commas.
-
-- `-c, --config <path>`: [not implemented yet] Specifies a custom configuration file to use for organization settings.
+- `-i, --ignore <types>`: [**not implemented yet**] Ignores specific file types during organization. Multiple types can be specified separated by commas.
 
 ## Examples
 
 1. Organize files in the `Downloads` directory:
 
 ```bash
-organizee -p ~/Downloads
+npx organizee -p ~/Downloads
 ```
 
 2. Organize files in the `Documents` directory with verbose mode enabled:
 
 ```bash
-organizee -p ~/Documents -v
+npx organizee -p ~/Documents -v
 ```
 
-3. Organize files in the current directory and keep the tool up listening for new files:
+3. Organize files using relative path:
 
 ```bash
-organizee -p . -u
+npx organizee -p ../Downloads
 ```
 
-4. Organize files in the `Desktop` directory, ignoring `.txt` and `.pdf` files:
+4. Organize files in the current directory and keep the tool up listening for new files:
 
 ```bash
-organizee -p ~/Desktop -i txt,pdf
+npx organizee -p . -l
 ```
 
-5. Organize files in the `Downloads` directory using a custom configuration file:
+5. Organize files in the `Desktop` directory, ignoring `.txt` and `.pdf` files:
 
 ```bash
-organizee -p ~/Downloads -c config.json
+npx organizee -p ~/Desktop -i txt,pdf
 ```
 
 ## Contributing
