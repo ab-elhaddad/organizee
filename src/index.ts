@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import { Logging, getAbsoluteDirPath, extractFlags } from "./utility";
+import { Logging, extractFlags } from "./utility";
 import { listenForChanges, orgAndClose } from "./main";
+import { isAbsolute, join } from "path";
 
 await Logging.printFIGfont();
 
@@ -15,7 +16,11 @@ if (isHelp) {
 }
 
 const dir = process.argv[dirPathIndex];
-const dirPath = getAbsoluteDirPath(dir);
+if (!dir) {
+  Logging.error("No directory path provided");
+  process.exit(1);
+}
+const dirPath = isAbsolute(dir) ? dir : join(process.cwd(), dir);
 
 Logging.startProcessing();
 
