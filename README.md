@@ -53,6 +53,8 @@ This will organize all the files in the `Downloads` directory.
 
 - `-l, --listen`: Keeps the tool running and listens for new files to organize in real-time.
 
+- `-V, --version`: Displays the current version of the tool.
+
 - `-i, --ignore <types>`: [**not implemented yet**] Ignores specific file types during organization. Multiple types can be specified separated by commas.
 
 ## Examples

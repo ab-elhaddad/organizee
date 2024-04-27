@@ -5,12 +5,20 @@ export const extractFlags = (
   isVerbose: boolean;
   isListening: boolean;
   isHelp: boolean;
+  isVersion: boolean;
 } => {
   const flags = args.filter((arg) => arg.startsWith("-"));
   const isVerbose = flags.includes("-v") || flags.includes("--verbose");
   const isListening = flags.includes("-l") || flags.includes("--listen");
   const dirPathIndex = args.indexOf("-p") + 1 || args.indexOf("--path") + 1;
   const isHelp = flags.includes("-h") || flags.includes("--help");
+  const isVersion = flags.includes("-V") || flags.includes("--version");
 
-  return { dirPathIndex, isVerbose, isListening, isHelp };
+  return {
+    dirPathIndex,
+    isVerbose,
+    isListening,
+    isHelp,
+    isVersion,
+  };
 };

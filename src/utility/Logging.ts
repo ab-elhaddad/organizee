@@ -65,7 +65,12 @@ export class Logging {
     -v, --verbose  Enable verbose output
     -l, --listen   Keep listening for changes in the directory
     -h, --help     Display this help message
+    -V, --version  Display the version of the package
   `)
     );
+  };
+
+  static printVersion = () => {
+    console.log(require("../../package.json").version);
   };
 }

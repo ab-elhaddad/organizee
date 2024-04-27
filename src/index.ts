@@ -4,14 +4,16 @@ import { Logging, extractFlags } from "./utility";
 import { listenForChanges, orgAndClose } from "./main";
 import { isAbsolute, join } from "path";
 
-await Logging.printFIGfont();
-
-const { dirPathIndex, isVerbose, isListening, isHelp } = extractFlags(
-  process.argv
-);
+const { dirPathIndex, isVerbose, isListening, isHelp, isVersion } =
+  extractFlags(process.argv);
 
 if (isHelp) {
   Logging.printHelp();
+  process.exit(0);
+}
+
+if (isVersion) {
+  Logging.printVersion();
   process.exit(0);
 }
 
@@ -25,6 +27,7 @@ const dirPath = isAbsolute(dir) ? dir : join(process.cwd(), dir);
 Logging.startProcessing();
 
 try {
+  await Logging.printFIGfont();
   orgAndClose(dirPath, isVerbose);
 
   if (isListening) {
