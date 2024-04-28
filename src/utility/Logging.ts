@@ -66,6 +66,7 @@ export class Logging {
     -l, --listen   Keep listening for changes in the directory
     -h, --help     Display this help message
     -V, --version  Display the version of the package
+    -i, --ignore   Specify the file extensions to ignore
   `)
     );
   };

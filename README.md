@@ -55,7 +55,7 @@ This will organize all the files in the `Downloads` directory.
 
 - `-V, --version`: Displays the current version of the tool.
 
-- `-i, --ignore <types>`: [**not implemented yet**] Ignores specific file types during organization. Multiple types can be specified separated by commas.
+- `-i, --ignore <types>`: Ignores specific file types during organization. Multiple types can be specified separated by commas.
 
 ## Examples
 

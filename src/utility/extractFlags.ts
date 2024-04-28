@@ -17,4 +17,5 @@ export const extractFlags = (args: string[]) => {
   flags.isHelp = passedFlags.includes("-h") || passedFlags.includes("--help");
   flags.isVersion =
     passedFlags.includes("-V") || passedFlags.includes("--version");
+  flags.ignoreIndex = args.indexOf("-i") + 1 || args.indexOf("--ignore") + 1;
 };
