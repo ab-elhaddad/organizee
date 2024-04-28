@@ -2,7 +2,7 @@ import { defineConfig } from "tsup";
 
 export default defineConfig({
   format: ["esm"],
-  entry: ["./src/index.ts", "./src/listenProcess.ts"],
+  entry: ["./src/index.ts"],
   shims: true,
   skipNodeModulesBundle: true,
   clean: true,

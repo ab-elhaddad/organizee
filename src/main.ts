@@ -1,4 +1,3 @@
-import { fork } from "child_process";
 import { join } from "path";
 import {
   Logging,
@@ -7,6 +6,7 @@ import {
   getFiles,
   moveFile,
 } from "./utility";
+import { existsSync, statSync, watch } from "fs";
 
 export const orgAndClose = (dirPath: string, isVerbose: boolean) => {
   const files = getFiles(dirPath, isVerbose);
@@ -18,10 +18,22 @@ export const orgAndClose = (dirPath: string, isVerbose: boolean) => {
 };
 
 export const listenForChanges = (dirPath: string, isVerbose: boolean) => {
-  const modulePath = join(__dirname, "listenProcess.mjs");
-
-  const child = fork(modulePath, [dirPath, isVerbose ? "-v" : ""]);
-  child.unref();
+  watch(dirPath, (event, file) => {
+    if (!file) return;
+    if (event !== "rename") return;
+    const fullPath = join(dirPath, file);
+    try {
+      if (!existsSync(fullPath)) return;
+      if (statSync(fullPath).isDirectory()) return;
+      createDirs(dirPath);
+      const isMoved = moveFile(file, dirPath);
+      Logging.info(isMoved ? "Moved: " : "Ignored: ", isVerbose, fullPath);
+      // To give time for the file to be written to disk
+      setTimeout(() => deleteEmptyDirs(dirPath), 500);
+    } catch (e) {
+      Logging.error("Error: ", e);
+    }
+  });
 
   Logging.main("Listening for changes 🔍");
   // process.exit(0);
