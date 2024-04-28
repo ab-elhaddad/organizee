@@ -11,7 +11,7 @@
     "noUnusedParameters": true,
     "skipLibCheck": true,
     "outDir": "dist",
-    "moduleResolution": "Node",
+    "moduleResolution": "Node10",
     "types": ["node", "jest"]
   },
   "include": ["src", "__tests__"],
