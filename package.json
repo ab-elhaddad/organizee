@@ -19,7 +19,6 @@
   "scripts": {
     "build": "tsup",
     "start": "node dist/index.mjs",
-    "start-test": "node dist/index.mjs -p ../toOrg -v -i Txt,rar -l",
     "watch": "jest --watchAll --verbose",
     "test": "jest --detectOpenHandles",
     "prepare": "husky",
