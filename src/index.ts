@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-import { Logging, extractFlags } from "./utility";
+import { Logging, extractFlags, flags } from "./utility";
 import { listenForChanges, orgAndClose } from "./main";
 import { isAbsolute, join } from "path";
 
-const { dirPathIndex, isVerbose, isListening, isHelp, isVersion } =
-  extractFlags(process.argv);
+extractFlags(process.argv);
+const { dirPathIndex, isVerbose, isListening, isHelp, isVersion } = flags;
 
 if (isHelp) {
   Logging.printHelp();

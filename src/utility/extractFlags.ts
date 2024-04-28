@@ -1,24 +1,20 @@
-export const extractFlags = (
-  args: string[]
-): {
-  dirPathIndex: number;
-  isVerbose: boolean;
-  isListening: boolean;
-  isHelp: boolean;
-  isVersion: boolean;
-} => {
-  const flags = args.filter((arg) => arg.startsWith("-"));
-  const isVerbose = flags.includes("-v") || flags.includes("--verbose");
-  const isListening = flags.includes("-l") || flags.includes("--listen");
-  const dirPathIndex = args.indexOf("-p") + 1 || args.indexOf("--path") + 1;
-  const isHelp = flags.includes("-h") || flags.includes("--help");
-  const isVersion = flags.includes("-V") || flags.includes("--version");
+export const flags = {
+  dirPathIndex: 0,
+  isVerbose: false,
+  isListening: false,
+  isHelp: false,
+  isVersion: false,
+  ignoreIndex: 0,
+};
 
-  return {
-    dirPathIndex,
-    isVerbose,
-    isListening,
-    isHelp,
-    isVersion,
-  };
+export const extractFlags = (args: string[]) => {
+  const passedFlags = args.filter((arg) => arg.startsWith("-"));
+  flags.isVerbose =
+    passedFlags.includes("-v") || passedFlags.includes("--verbose");
+  flags.isListening =
+    passedFlags.includes("-l") || passedFlags.includes("--listen");
+  flags.dirPathIndex = args.indexOf("-p") + 1 || args.indexOf("--path") + 1;
+  flags.isHelp = passedFlags.includes("-h") || passedFlags.includes("--help");
+  flags.isVersion =
+    passedFlags.includes("-V") || passedFlags.includes("--version");
 };
