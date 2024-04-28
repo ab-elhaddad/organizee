@@ -2,7 +2,7 @@
 
 organizee is a command-line interface (CLI) tool designed to help users organize their files efficiently based on file type.
 
-![tool-use](https://github.com/ab-elhaddad/organizee/assets/113056556/81ec5893-8556-4926-8ac6-9a231bdc80ad)
+![tool-usage](https://github.com/ab-elhaddad/organizee/assets/113056556/c101f41b-2686-45fe-be38-941b8060c7e1)
 
 ## Inspiration
 
