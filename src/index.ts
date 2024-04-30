@@ -33,7 +33,7 @@ try {
   if (isListening) {
     listenForChanges(dirPath, isVerbose);
   } else {
-    Logging.main("Done 🎉");
+    Logging.main("Done.");
   }
 } catch (e: any) {
   Logging.error(e);

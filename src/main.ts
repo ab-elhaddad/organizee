@@ -35,6 +35,6 @@ export const listenForChanges = (dirPath: string, isVerbose: boolean) => {
     }
   });
 
-  Logging.main("Listening for changes 🔍");
+  Logging.main("Listening for changes...");
   // process.exit(0);
 };
