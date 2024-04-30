@@ -26,10 +26,11 @@ export const listenForChanges = (dirPath: string, isVerbose: boolean) => {
       if (!existsSync(fullPath)) return;
       if (statSync(fullPath).isDirectory()) return;
       createDirs(dirPath);
-      const isMoved = moveFile(file, dirPath);
-      Logging.info(isMoved ? "Moved: " : "Ignored: ", isVerbose, fullPath);
-      // To give time for the file to be written to disk
-      setTimeout(() => deleteEmptyDirs(dirPath), 500);
+      setImmediate(() => {
+        const isMoved = moveFile(file, dirPath);
+        Logging.info(isMoved ? "Moved: " : "Ignored: ", isVerbose, fullPath);
+        setTimeout(() => deleteEmptyDirs(dirPath), 500);
+      });
     } catch (e) {
       Logging.error("Error: ", e);
     }
